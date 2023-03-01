@@ -25,15 +25,20 @@ class MainApp extends StatelessWidget {
               Container(
                 height: 30,
                 width: 100,
-                child: Center(child: Text('Username')),
+                margin: EdgeInsets.all(10),
                 color: Colors.white,
+                child: TextField(
+                  decoration: InputDecoration(hintText: "Username"),
+                ),
               ),
               Container(
-                margin: EdgeInsets.all(10),
                 height: 30,
                 width: 100,
-                child: Center(child: Text('Password')),
+                margin: EdgeInsets.all(10),
                 color: Colors.white,
+                child: TextField(
+                  decoration: InputDecoration(hintText: 'Password'),
+                ),
               ),
               Text('Reset password'),
               ElevatedButton(
@@ -43,7 +48,7 @@ class MainApp extends StatelessWidget {
                   child: Text("Sign in")),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   Text('----'),
                   Text('Continue with'),
                   Text('----'),
@@ -54,21 +59,30 @@ class MainApp extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                        ElevatedButton.styleFrom(backgroundColor: Colors.white),
                     onPressed: () => {print("Sign in")},
-                    child: Text('Google'),
+                    child: Container(
+                        width: 20,
+                        height: 20,
+                        child: Image.asset('images/google.png')),
                   ),
                   ElevatedButton(
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.grey),
                     onPressed: () => {print("Sign in")},
-                    child: Text('Apple'),
+                    child: Container(
+                        width: 20,
+                        height: 20,
+                        child: Image.asset('images/apple.png')),
                   ),
                   ElevatedButton(
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                     onPressed: () => {print("Sign in")},
-                    child: Text('FaceBook'),
+                    child: Container(
+                        width: 20,
+                        height: 20,
+                        child: Image.asset('images/facebook.png')),
                   ),
                 ],
               ),
