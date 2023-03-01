@@ -11,6 +11,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Journaly"),
+          centerTitle: true,
+          backgroundColor: Colors.green,
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -31,6 +36,11 @@ class MainApp extends StatelessWidget {
                 color: Colors.white,
               ),
               Text('Reset password'),
+              ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                  onPressed: () => {print("Sign in")},
+                  child: Text("Sign in")),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -42,9 +52,24 @@ class MainApp extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Google'),
-                  Text('Apple'),
-                  Text('FaceBook'),
+                  ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    onPressed: () => {print("Sign in")},
+                    child: Text('Google'),
+                  ),
+                  ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.grey),
+                    onPressed: () => {print("Sign in")},
+                    child: Text('Apple'),
+                  ),
+                  ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                    onPressed: () => {print("Sign in")},
+                    child: Text('FaceBook'),
+                  ),
                 ],
               ),
               Row(
