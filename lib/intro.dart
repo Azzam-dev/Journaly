@@ -9,7 +9,10 @@ class Intro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Container(
+            width: 150, height: 150, child: Image.asset('images/logo.png')),
         Text('Hello World!'),
+        Text('Welcome back'),
         Text('Welcome back'),
       ],
     );
