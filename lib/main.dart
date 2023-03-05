@@ -23,23 +23,29 @@ class MainApp extends StatelessWidget {
         drawer: Drawer(
           child: ListView(
             children: [
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  children: [Icon(Icons.home), Text("Home")],
-                ),
+              ListTile(
+                onTap: () {
+                  print("did tap Home");
+                },
+                leading: Icon(Icons.home),
+                title: Text("Home"),
+                subtitle: Text("this is the Home page"),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  children: [Icon(Icons.person), Text("Profile")],
-                ),
+              ListTile(
+                onTap: () {
+                  print("did tap Profile");
+                },
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
+                subtitle: Text("this is your Profile page"),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Row(
-                  children: [Icon(Icons.search), Text("Search")],
-                ),
+              ListTile(
+                onTap: () {
+                  print("did tap Search");
+                },
+                leading: Icon(Icons.search),
+                title: Text("Search"),
+                subtitle: Text("this is the Search page"),
               ),
             ],
           ),
