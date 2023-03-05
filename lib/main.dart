@@ -3,6 +3,7 @@ import 'intro.dart';
 import 'login.dart';
 import 'createAccount.dart';
 import 'Counter.dart';
+import 'MyDrawer.dart';
 
 void main() {
   runApp(const MainApp());
@@ -20,36 +21,7 @@ class MainApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.green,
         ),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              ListTile(
-                onTap: () {
-                  print("did tap Home");
-                },
-                leading: Icon(Icons.home),
-                title: Text("Home"),
-                subtitle: Text("this is the Home page"),
-              ),
-              ListTile(
-                onTap: () {
-                  print("did tap Profile");
-                },
-                leading: Icon(Icons.person),
-                title: Text("Profile"),
-                subtitle: Text("this is your Profile page"),
-              ),
-              ListTile(
-                onTap: () {
-                  print("did tap Search");
-                },
-                leading: Icon(Icons.search),
-                title: Text("Search"),
-                subtitle: Text("this is the Search page"),
-              ),
-            ],
-          ),
-        ),
+        drawer: MyDrawer(),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
