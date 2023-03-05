@@ -20,6 +20,30 @@ class MainApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.green,
         ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [Icon(Icons.home), Text("Home")],
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [Icon(Icons.person), Text("Profile")],
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [Icon(Icons.search), Text("Search")],
+                ),
+              ),
+            ],
+          ),
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

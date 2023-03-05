@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
+  final String? hint;
   const Login({
     super.key,
+    this.hint,
   });
 
   @override
@@ -14,7 +16,7 @@ class _LoginState extends State<Login> {
   String username = "";
   String password = "";
 
-  checkUsernamePassword() {
+  void checkUsernamePassword() {
     setState(() {
       if (username == "" || password == "") {
         correctEntry = false;
@@ -35,7 +37,7 @@ class _LoginState extends State<Login> {
           color: correctEntry ? Colors.white : Colors.red,
           child: TextField(
             onChanged: (value) => {username = value},
-            decoration: InputDecoration(hintText: "Username"),
+            decoration: InputDecoration(hintText: widget.hint),
           ),
         ),
         Container(
