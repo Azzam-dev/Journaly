@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'MyDrawer.dart';
+import 'AnimatedPensel.dart';
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
@@ -15,7 +16,7 @@ class MyProfile extends StatelessWidget {
         ),
         drawer: MyDrawer(),
         body: Center(
-          child: Placeholder(),
+          child: AnimatedPensel(),
         ),
       ),
     );
