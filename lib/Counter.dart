@@ -18,6 +18,7 @@ class _MyCounterState extends State<MyCounter> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
             onPressed: incressNumber,
