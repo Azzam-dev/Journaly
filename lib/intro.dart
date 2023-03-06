@@ -11,9 +11,18 @@ class Intro extends StatelessWidget {
       children: [
         Container(
             width: 150, height: 150, child: Image.asset('images/logo.png')),
-        Text('Hello World!'),
-        Text('Welcome back'),
-        Text('Welcome back'),
+        Text(
+          'Hello World!',
+          style: TextStyle(
+              fontFamily: "Cairo",
+              fontWeight: FontWeight.normal,
+              fontSize: 50.0),
+        ),
+        Text(
+          'ياهلا حياكم الله',
+          style: TextStyle(
+              fontFamily: 'Cairo', fontWeight: FontWeight.bold, fontSize: 30.0),
+        ),
       ],
     );
   }
