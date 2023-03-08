@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'Home.dart';
 import 'MyProfile.dart';
 import 'Search.dart';
+import 'Counter.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({
@@ -12,7 +15,10 @@ class MyDrawer extends StatelessWidget {
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Home(),
+          builder: (context) => Home(
+            title: "Home",
+            child: MyCounter(),
+          ),
         ));
   }
 

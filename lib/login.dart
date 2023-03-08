@@ -17,11 +17,14 @@ class _LoginState extends State<Login> {
   String username = "";
   String password = "";
 
-  void goHomeScreen() {
+  void openHomeScreen() {
     Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Home(),
+          builder: (context) => Home(
+            child: Text("Hello"),
+            title: username,
+          ),
         ));
   }
 
@@ -31,8 +34,7 @@ class _LoginState extends State<Login> {
         correctEntry = false;
       } else {
         correctEntry = true;
-        goHomeScreen();
-        //.. الانتقال
+        openHomeScreen();
       }
     });
   }
