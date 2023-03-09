@@ -13,9 +13,13 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  bool correctEntry = true;
   String username = "";
   String password = "";
+  String confirmPassword = "";
+
+  Widget errorMessage = SizedBox(
+    height: 0,
+  );
 
   void openHomeScreen() {
     Navigator.push(
@@ -30,12 +34,41 @@ class _LoginState extends State<Login> {
 
   void checkUsernamePassword() {
     setState(() {
-      if (username == "" || password == "") {
-        correctEntry = false;
+      if (username == "") {
+        errorMessage = Container(
+          color: Colors.red,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("please enter a username"),
+          ),
+        );
+      } else if (password == "") {
+        errorMessage = Container(
+          color: Colors.red,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("please enter a password"),
+          ),
+        );
+      } else if (password != confirmPassword) {
+        errorMessage = Container(
+          color: Colors.red,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("confirm Password not Equals to main Password"),
+          ),
+        );
       } else {
-        correctEntry = true;
         openHomeScreen();
       }
+    });
+  }
+
+  void removeErrorMessage() {
+    setState(() {
+      errorMessage = SizedBox(
+        height: 0,
+      );
     });
   }
 
@@ -47,8 +80,8 @@ class _LoginState extends State<Login> {
           height: 30,
           width: 100,
           margin: EdgeInsets.all(10),
-          color: correctEntry ? Colors.white : Colors.red,
           child: TextField(
+            onTap: removeErrorMessage,
             onChanged: (value) => {username = value},
             decoration: InputDecoration(hintText: widget.hint),
           ),
@@ -57,12 +90,23 @@ class _LoginState extends State<Login> {
           height: 30,
           width: 100,
           margin: EdgeInsets.all(10),
-          color: correctEntry ? Colors.white : Colors.red,
           child: TextField(
+            onTap: removeErrorMessage,
             onChanged: (value) => {password = value},
             decoration: InputDecoration(hintText: 'Password'),
           ),
         ),
+        Container(
+          height: 30,
+          width: 100,
+          margin: EdgeInsets.all(10),
+          child: TextField(
+            onTap: removeErrorMessage,
+            onChanged: (value) => {confirmPassword = value},
+            decoration: InputDecoration(hintText: 'Confirm password'),
+          ),
+        ),
+        errorMessage,
         Text('Reset password'),
         ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
