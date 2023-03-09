@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Home.dart';
+import 'ErrorMessage.dart';
 
 class Login extends StatefulWidget {
   final String? hint;
@@ -35,29 +36,11 @@ class _LoginState extends State<Login> {
   void checkUsernamePassword() {
     setState(() {
       if (username == "") {
-        errorMessage = Container(
-          color: Colors.red,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("please enter a username"),
-          ),
-        );
+        errorMessage = ErrorMessage(message: "please enter a username",);
       } else if (password == "") {
-        errorMessage = Container(
-          color: Colors.red,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("please enter a password"),
-          ),
-        );
+        errorMessage = ErrorMessage(message: "please enter a password",);
       } else if (password != confirmPassword) {
-        errorMessage = Container(
-          color: Colors.red,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("confirm Password not Equals to main Password"),
-          ),
-        );
+        errorMessage = ErrorMessage(message: "confirm Password not Equals to main Password")
       } else {
         openHomeScreen();
       }
