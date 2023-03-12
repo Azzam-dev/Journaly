@@ -36,11 +36,16 @@ class _LoginState extends State<Login> {
   void checkUsernamePassword() {
     setState(() {
       if (username == "") {
-        errorMessage = ErrorMessage(message: "please enter a username",);
+        errorMessage = ErrorMessage(
+          message: "please enter a username",
+        );
       } else if (password == "") {
-        errorMessage = ErrorMessage(message: "please enter a password",);
+        errorMessage = ErrorMessage(
+          message: "please enter a password",
+        );
       } else if (password != confirmPassword) {
-        errorMessage = ErrorMessage(message: "confirm Password not Equals to main Password")
+        errorMessage = ErrorMessage(
+            message: "confirm Password not Equals to main Password");
       } else {
         openHomeScreen();
       }
