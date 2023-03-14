@@ -50,6 +50,7 @@ class _LoginState extends State<Login> {
         errorMessage = ErrorMessage(
           message: "Successfully login",
           color: Colors.green,
+          icon: Icons.task_alt,
         );
         Future.delayed(Duration(seconds: 2), openHomeScreen);
       }
