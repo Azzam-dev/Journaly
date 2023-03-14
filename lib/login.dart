@@ -47,7 +47,11 @@ class _LoginState extends State<Login> {
         errorMessage = ErrorMessage(
             message: "confirm Password not Equals to main Password");
       } else {
-        openHomeScreen();
+        errorMessage = ErrorMessage(
+          message: "Successfully login",
+          color: Colors.green,
+        );
+        Future.delayed(Duration(seconds: 2), openHomeScreen);
       }
     });
   }
